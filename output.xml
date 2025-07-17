@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.5 on win32)" generated="2025-07-17T21:02:28.922597" rpa="false" schemaversion="5">
+<suite id="s1" name="BOF test" source="C:\Users\ACER\Documents\InternTest\BOF_test.robot">
+<kw name="Login To System" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-17T21:02:29.179336" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\ACER\\Documents\\InternTest\\browser\\traces\\temp\\9e805908-b4d5-485e-a498-cb192e2c9665"}</msg>
+<msg time="2025-07-17T21:02:29.237076" level="INFO">Starting Browser process C:\Users\ACER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\Browser\wrapper\index.js using at 127.0.0.1:61421</msg>
+<msg time="2025-07-17T21:02:31.582637" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\ACER\\Documents\\InternTest\\browser\\traces\\temp\\9e805908-b4d5-485e-a498-cb192e2c9665"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-17T21:02:29.177946" elapsed="2.405212"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-07-17T21:02:31.586689" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "locale": "en-US",
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-07-17T21:02:31.621168" level="INFO">Successfully created context. </msg>
+<msg time="2025-07-17T21:02:31.621261" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'locale': 'en-US', 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<arg>locale=en-US</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-07-17T21:02:31.583725" elapsed="0.037672"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-17T21:02:32.300975" level="INFO">Successfully initialized new page object and opened url: https://sit-uplifestyle-admin.thailife.com</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-17T21:02:31.621722" elapsed="0.679453"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>60 seconds</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2025-07-17T21:02:32.301373" elapsed="0.005354"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-07-17T21:03:02.314148" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2025-07-17T21:03:02.314355" level="INFO">See also file:///C:/Users/ACER/Documents/InternTest/playwright-log.txt for additional details.</msg>
+<msg time="2025-07-17T21:03:02.316361" level="FAIL">Error: Could not find active page</msg>
+<arg>text=Welcome Back</arg>
+<arg>visible</arg>
+<arg>timeout=30s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-07-17T21:02:32.307254" elapsed="30.023285">Error: Could not find active page</status>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>text=Sign in &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.330813" elapsed="0.000167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.331099" elapsed="0.000101"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${pick_account}</var>
+<arg>Wait For Elements State</arg>
+<arg>text=Pick an account</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.331319" elapsed="0.000099"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${pick_account}</arg>
+<arg>Click</arg>
+<arg>text=Saranyapong Tarama</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.331528" elapsed="0.000104"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${email_field}</var>
+<arg>Wait For Elements State</arg>
+<arg>input[type="email"]</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.331733" elapsed="0.000097"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${email_field}</arg>
+<arg>Fill Text</arg>
+<arg>input[type="email"]</arg>
+<arg>${USERNAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.331933" elapsed="0.000098"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${email_field}</arg>
+<arg>Click</arg>
+<arg>text=Next</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.332138" elapsed="0.000096"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${password_field}</var>
+<arg>Wait For Elements State</arg>
+<arg>input[type="password"]</arg>
+<arg>visible</arg>
+<arg>timeout=8s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.332329" elapsed="0.000098"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${password_field}</arg>
+<arg>Fill Text</arg>
+<arg>input[type="password"]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.332528" elapsed="0.000093"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${password_field}</arg>
+<arg>Click</arg>
+<arg>css=input[value="Sign in"]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.332715" elapsed="0.000091"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${stay_signed}</var>
+<arg>Wait For Elements State</arg>
+<arg>text=Stay signed in?</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.332903" elapsed="0.000092"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${stay_signed}</arg>
+<arg>Click</arg>
+<arg>text=Yes</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.333097" elapsed="0.000093"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<arg>text=UP Lifestyle Backoffice</arg>
+<arg>visible</arg>
+<arg>timeout=30s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="NOT RUN" start="2025-07-17T21:03:02.333303" elapsed="0.000099"/>
+</kw>
+<status status="FAIL" start="2025-07-17T21:02:29.176248" elapsed="33.157535">Error: Could not find active page</status>
+</kw>
+<test id="s1-t1" name="Test Content Management - Manage Feeds" line="14">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.333934" elapsed="0.004958">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t2" name="Test Content Management - Manage Banner" line="22">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.347145" elapsed="0.004394">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t3" name="Test Content Management - Manage Quote" line="30">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.357233" elapsed="0.002177">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t4" name="Test Content Management - Manage Popup" line="38">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.364968" elapsed="0.003269">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t5" name="Test Log Monitoring - Admin Activity Log" line="46">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.373199" elapsed="0.003918">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t6" name="Test Customer Management - Application User Info" line="54">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.383337" elapsed="0.002069">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<test id="s1-t7" name="Test System Configuration - Manage Role &amp; Permission" line="62">
+<timeout value="1 minute"/>
+<status status="FAIL" start="2025-07-17T21:03:02.391163" elapsed="0.002518">Parent suite setup failed:
+Error: Could not find active page</status>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-17T21:03:02.857506" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-17T21:03:02.399433" elapsed="0.458784"/>
+</kw>
+<status status="FAIL" start="2025-07-17T21:02:28.924895" elapsed="33.933674">Suite setup failed:
+Error: Could not find active page</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="7" skip="0" id="s1" name="BOF test">BOF test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
