@@ -4,7 +4,7 @@ const BASE_URL = 'https://sit-uplifestyle-admin.thailife.com';
 const USERNAME = 'saranyapong.tar@thailife.com';
 const PASSWORD = 'P@ssword1';
 
-test.describe.configure({ timeout: 120000 }); // Suite timeout
+test.describe.configure({ timeout: 120000 });
 
 test.beforeEach(async ({ page }) => {
   await loginToSystem(page);
